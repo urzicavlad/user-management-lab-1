@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FileContextCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,7 @@ namespace UserManagement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<UsersContext>(opt =>
-                opt.UseInMemoryDatabase("Users"));
+                opt.UseFileContextDatabase("Users","."));
             services.AddControllers();
         }
 

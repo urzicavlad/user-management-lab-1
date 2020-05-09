@@ -2,18 +2,10 @@
 {
     public class UserValidator
     {
-        private User _user;
-
-        public UserValidator(User user)
+        
+        public static bool IsValid(User user)
         {
-            this._user = user;
-        }
-
-        public static bool isValid()
-        {
-           
-
-            return false;
+            return user.Id >= 0L;
         }
     }
 }
